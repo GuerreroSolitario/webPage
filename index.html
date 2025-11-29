@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfumería Monteverde</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="image-modal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modal-img" />
+      <div id="caption"></div>
+    </div>
+
+    <nav class="main-header">
+      <div class="menu-left">
+        <div class="search-icon" id="menu-toggle">
+          <img src="imagenes/menu.png" alt="Buscar" />
+        </div>
+
+        <a href="/">
+          <img
+            src="https://perfumeriasublime.com/cdn/shop/files/logo-sublime_400x.jpg?v=1728329595"
+            alt="Logo Monteverde"
+            class="mobile-logo"
+          />
+        </a>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li class="solo-mobile">
+          <img
+            id="cerrar-menu"
+            src="https://perfumeriasublime.com/cdn/shop/files/logo-sublime_400x.jpg?v=1728329595"
+            alt="Logo Monteverde"
+            class="mobile-logo-menu"
+          />
+        </li>
+
+        <li class="solo-mobile">
+          <strong>Género</strong>
+          <div class="genero-submenu">
+            <div class="genero-scroll">
+              <form id="genero-form">
+                <label
+                  ><span>Dama</span><input type="checkbox" value="Dama"
+                /></label>
+                <label
+                  ><span>Caballero</span
+                  ><input type="checkbox" value="Caballero"
+                /></label>
+                <label
+                  ><span>Unisex</span><input type="checkbox" value="Unisex"
+                /></label>
+              </form>
+            </div>
+          </div>
+        </li>
+
+        <li class="solo-mobile">
+          <strong>Marcas</strong>
+          <span
+            id="borrar-filtros"
+            style="
+              display: none;
+              cursor: pointer;
+              margin-left: 10px;
+              color: #007bff;
+            "
+          >
+            Borrar Filtros
+          </span>
+          <div class="marcas-submenu">
+            <input
+              type="text"
+              placeholder="Buscar marca..."
+              id="marca-busqueda"
+            />
+            <div class="marca-scroll">
+              <form id="marca-form">
+                <label
+                  ><span>Abercrombie & Fitch</span
+                  ><input type="checkbox" value="Abercrombie & Fitch"
+                /></label>
+                <label
+                  ><span>Acqua di Parma</span
+                  ><input type="checkbox" value="Acqua di Parma"
+                /></label>
+                <label
+                  ><span>Adolfo Dominguez</span
+                  ><input type="checkbox" value="Adolfo Dominguez"
+                /></label>
+                <label
+                  ><span>Afnan</span><input type="checkbox" value="Afnan"
+                /></label>
+                <label
+                  ><span>Al Haramain</span
+                  ><input type="checkbox" value="Al Haramain"
+                /></label>
+                <label
+                  ><span>Animale</span><input type="checkbox" value="Animale"
+                /></label>
+                <label
+                  ><span>Antonio Banderas</span
+                  ><input type="checkbox" value="Antonio Banderas"
+                /></label>
+                <label
+                  ><span>Ariana Grande</span
+                  ><input type="checkbox" value="Ariana Grande"
+                /></label>
+                <label
+                  ><span>Armaf</span><input type="checkbox" value="Armaf"
+                /></label>
+                <label
+                  ><span>Azzaro</span><input type="checkbox" value="Azzaro"
+                /></label>
+                <label
+                  ><span>Benetton</span><input type="checkbox" value="Benetton"
+                /></label>
+                <label
+                  ><span>Bharara</span><input type="checkbox" value="Bharara"
+                /></label>
+                <label
+                  ><span>Billie Eilish</span
+                  ><input type="checkbox" value="Billie Eilish"
+                /></label>
+                <label
+                  ><span>Bond No. 9</span
+                  ><input type="checkbox" value="Bond No. 9"
+                /></label>
+                <label
+                  ><span>Britney Spears</span
+                  ><input type="checkbox" value="Britney Spears"
+                /></label>
+                <label
+                  ><span>Burberry</span><input type="checkbox" value="Burberry"
+                /></label>
+                <label
+                  ><span>Bvlgari</span><input type="checkbox" value="Bvlgari"
+                /></label>
+                <label
+                  ><span>Cacharel</span><input type="checkbox" value="Cacharel"
+                /></label>
+                <label
+                  ><span>Calvin Klein</span
+                  ><input type="checkbox" value="Calvin Klein"
+                /></label>
+                <label
+                  ><span>Carlo Corinto</span
+                  ><input type="checkbox" value="Carlo Corinto"
+                /></label>
+                <label
+                  ><span>Carolina Herrera</span
+                  ><input type="checkbox" value="Carolina Herrera"
+                /></label>
+                <label
+                  ><span>Cartier</span><input type="checkbox" value="Cartier"
+                /></label>
+                <label
+                  ><span>Chanel</span><input type="checkbox" value="Chanel"
+                /></label>
+                <label
+                  ><span>Chloé</span><input type="checkbox" value="Chloé"
+                /></label>
+                <label
+                  ><span>Coach</span><input type="checkbox" value="Coach"
+                /></label>
+                <label
+                  ><span>Creed</span><input type="checkbox" value="Creed"
+                /></label>
+                <label
+                  ><span>Davidoff</span><input type="checkbox" value="Davidoff"
+                /></label>
+                <label
+                  ><span>Dior</span><input type="checkbox" value="Dior"
+                /></label>
+                <label
+                  ><span>DKNY</span><input type="checkbox" value="DKNY"
+                /></label>
+                <label
+                  ><span>Dolce&Gabbana</span
+                  ><input type="checkbox" value="Dolce&Gabbana"
+                /></label>
+                <label
+                  ><span>Dumont Paris</span
+                  ><input type="checkbox" value="Dumont Paris"
+                /></label>
+                <label
+                  ><span>Emper</span><input type="checkbox" value="Emper"
+                /></label>
+                <label
+                  ><span>Fragrance World</span
+                  ><input type="checkbox" value="Fragrance World"
+                /></label>
+                <label
+                  ><span>Giorgio Armani</span
+                  ><input type="checkbox" value="Giorgio Armani"
+                /></label>
+                <label
+                  ><span>Givenchy</span><input type="checkbox" value="Givenchy"
+                /></label>
+                <label
+                  ><span>Gucci</span><input type="checkbox" value="Gucci"
+                /></label>
+                <label
+                  ><span>Guerlain</span><input type="checkbox" value="Guerlain"
+                /></label>
+                <label
+                  ><span>Guess</span><input type="checkbox" value="Guess"
+                /></label>
+                <label
+                  ><span>Halloween</span
+                  ><input type="checkbox" value="Halloween"
+                /></label>
+                <label
+                  ><span>Hermès</span><input type="checkbox" value="Hermès"
+                /></label>
+                <label
+                  ><span>Hugo Boss</span
+                  ><input type="checkbox" value="Hugo Boss"
+                /></label>
+                <label
+                  ><span>Issey Miyake</span
+                  ><input type="checkbox" value="Issey Miyake"
+                /></label>
+                <label
+                  ><span>Jean Paul Gaultier</span
+                  ><input type="checkbox" value="Jean Paul Gaultier"
+                /></label>
+                <label
+                  ><span>Jimmy Choo</span
+                  ><input type="checkbox" value="Jimmy Choo"
+                /></label>
+                <label
+                  ><span>Jo Milano</span
+                  ><input type="checkbox" value="Jo Milano"
+                /></label>
+                <label
+                  ><span>Katy Perry</span
+                  ><input type="checkbox" value="Katy Perry"
+                /></label>
+                <label
+                  ><span>Kenzo</span><input type="checkbox" value="Kenzo"
+                /></label>
+                <label
+                  ><span>Lacoste</span><input type="checkbox" value="Lacoste"
+                /></label>
+                <label
+                  ><span>Lancôme</span><input type="checkbox" value="Lancôme"
+                /></label>
+                <label
+                  ><span>Lattafa</span><input type="checkbox" value="Lattafa"
+                /></label>
+                <label
+                  ><span>Loewe</span><input type="checkbox" value="Loewe"
+                /></label>
+                <label
+                  ><span>Maison Alhambra</span
+                  ><input type="checkbox" value="Maison Alhambra"
+                /></label>
+                <label
+                  ><span>Mancera</span><input type="checkbox" value="Mancera"
+                /></label>
+                <label
+                  ><span>Marc Jacobs</span
+                  ><input type="checkbox" value="Marc Jacobs"
+                /></label>
+                <label
+                  ><span>Michael Kors</span
+                  ><input type="checkbox" value="Michael Kors"
+                /></label>
+                <label
+                  ><span>Montblanc</span
+                  ><input type="checkbox" value="Montblanc"
+                /></label>
+                <label
+                  ><span>Moschino</span><input type="checkbox" value="Moschino"
+                /></label>
+                <label
+                  ><span>Mugler</span><input type="checkbox" value="Mugler"
+                /></label>
+                <label
+                  ><span>Narciso Rodriguez</span
+                  ><input type="checkbox" value="Narciso Rodriguez"
+                /></label>
+                <label
+                  ><span>Nautica</span><input type="checkbox" value="Nautica"
+                /></label>
+                <label
+                  ><span>Orientica</span
+                  ><input type="checkbox" value="Orientica"
+                /></label>
+                <label
+                  ><span>Paco Rabanne</span
+                  ><input type="checkbox" value="Paco Rabanne"
+                /></label>
+                <label
+                  ><span>Parfums de Marly</span
+                  ><input type="checkbox" value="Parfums de Marly"
+                /></label>
+                <label
+                  ><span>Paris Hilton</span
+                  ><input type="checkbox" value="Paris Hilton"
+                /></label>
+                <label
+                  ><span>Perry Ellis</span
+                  ><input type="checkbox" value="Perry Ellis"
+                /></label>
+                <label
+                  ><span>Prada</span><input type="checkbox" value="Prada"
+                /></label>
+                <label
+                  ><span>Ralph Lauren</span
+                  ><input type="checkbox" value="Ralph Lauren"
+                /></label>
+                <label
+                  ><span>Rasasi</span><input type="checkbox" value="Rasasi"
+                /></label>
+                <label
+                  ><span>Salvatore Ferragamo</span
+                  ><input type="checkbox" value="Salvatore Ferragamo"
+                /></label>
+                <label
+                  ><span>Tom Ford</span><input type="checkbox" value="Tom Ford"
+                /></label>
+                <label
+                  ><span>Tommy Hilfiger</span
+                  ><input type="checkbox" value="Tommy Hilfiger"
+                /></label>
+                <label
+                  ><span>Tous</span><input type="checkbox" value="Tous"
+                /></label>
+                <label
+                  ><span>Valentino</span
+                  ><input type="checkbox" value="Valentino"
+                /></label>
+                <label
+                  ><span>Versace</span><input type="checkbox" value="Versace"
+                /></label>
+                <label
+                  ><span>Viktor&Rolf</span
+                  ><input type="checkbox" value="Viktor&Rolf"
+                /></label>
+                <label
+                  ><span>Xerjoff</span><input type="checkbox" value="Xerjoff"
+                /></label>
+                <label
+                  ><span>Yves Saint Laurent</span
+                  ><input type="checkbox" value="Yves Saint Laurent"
+                /></label>
+              </form>
+            </div>
+          </div>
+        </li>
+
+        <li class="solo-mobile" id="bloque-marcas-seleccionadas">
+          <strong>Marcas Seleccionadas</strong>
+          <div id="marcas-seleccionadas"></div>
+        </li>
+      </ul>
+
+      <div class="search-icon">
+        <img src="imagenes/facebook.png" alt="Buscar" />
+      </div>
+
+      <div class="search-icon">
+        <img src="imagenes/instagram.png" alt="Buscar" />
+      </div>
+
+      <div class="search-icon">
+        <img src="imagenes/whatsapp.png" alt="Buscar" />
+      </div>
+
+      <div class="search-icon" id="search-toggle">
+        <img src="imagenes/buscar.png" alt="Buscar" />
+      </div>
+    </nav>
+
+    <div id="search-header-container"></div>
+
+    <div class="banner">
+      <img src="imagenes/banner.webp" alt="Promoción Perfumería Monteverde" />
+    </div>
+
+    <section class="product-list" id="product-list">
+      <div class="product-card" data-marca="Versace">
+        <img
+          src="https://fimgs.net/mdimg/perfume-thumbs/375x500.16657.2x.avif"
+          alt="Eros Eau de Parfum"
+        />
+        <p class="product-brand">Versace</p>
+        <p class="product-name">Eros Eau de Parfum</p>
+        <button class="botonChido">Cotizar</button>
+      </div>
+
+      <div class="product-card" data-marca="Versace">
+        <img
+          src="https://fimgs.net/mdimg/perfume-thumbs/375x500.16657.2x.avif"
+          alt="Eros Eau de Parfum"
+        />
+        <p class="product-brand">Versace</p>
+        <p class="product-name">Eros Eau de Parfum</p>
+        <button class="botonChido">Cotizar</button>
+      </div>
+
+      <div class="product-card" data-marca="Versace">
+        <img
+          src="https://fimgs.net/mdimg/perfume-thumbs/375x500.16657.2x.avif"
+          alt="Eros Eau de Parfum"
+        />
+        <p class="product-brand">Versace</p>
+        <p class="product-name">Eros Eau de Parfum</p>
+        <button class="botonChido">Cotizar</button>
+      </div>
+
+      <div class="product-card" data-marca="Versace">
+        <img
+          src="https://fimgs.net/mdimg/perfume-thumbs/375x500.16657.2x.avif"
+          alt="Eros Eau de Parfum"
+        />
+        <p class="product-brand">Versace</p>
+        <p class="product-name">Eros Eau de Parfum</p>
+        <button class="botonChido">Cotizar</button>
+      </div>
+
+      <div class="product-card" data-marca="Versace">
+        <img
+          src="https://fimgs.net/mdimg/perfume-thumbs/375x500.16657.2x.avif"
+          alt="Eros Eau de Parfum"
+        />
+        <p class="product-brand">Versace</p>
+        <p class="product-name">Eros Eau de Parfum</p>
+        <button class="botonChido">Cotizar</button>
+      </div>
+
+      <div class="product-card" data-marca="Versace">
+        <img
+          src="https://fimgs.net/mdimg/perfume-thumbs/375x500.16657.2x.avif"
+          alt="Eros Eau de Parfum"
+        />
+        <p class="product-brand">Versace</p>
+        <p class="product-name">Eros Eau de Parfum</p>
+        <button class="botonChido">Cotizar</button>
+      </div>
+
+      <div class="product-card" data-marca="Versace">
+        <img
+          src="https://fimgs.net/mdimg/perfume-thumbs/375x500.16657.2x.avif"
+          alt="Eros Eau de Parfum"
+        />
+        <p class="product-brand">Versace</p>
+        <p class="product-name">Eros Eau de Parfum</p>
+        <button class="botonChido">Cotizar</button>
+      </div>
+
+      <div class="product-card" data-marca="Versace">
+        <img
+          src="https://fimgs.net/mdimg/perfume-thumbs/375x500.16657.2x.avif"
+          alt="Eros Eau de Parfum"
+        />
+        <p class="product-brand">Versace</p>
+        <p class="product-name">Eros Eau de Parfum</p>
+        <button class="botonChido">Cotizar</button>
+      </div>
+
+      <div class="product-card" data-marca="Versace">
+        <img
+          src="https://fimgs.net/mdimg/perfume-thumbs/375x500.16657.2x.avif"
+          alt="Eros Eau de Parfum"
+        />
+        <p class="product-brand">Versace</p>
+        <p class="product-name">Eros Eau de Parfum</p>
+        <button class="botonChido">Cotizar</button>
+      </div>
+
+      <div class="product-card" data-marca="Versace">
+        <img
+          src="https://fimgs.net/mdimg/perfume-thumbs/375x500.16657.2x.avif"
+          alt="Eros Eau de Parfum"
+        />
+        <p class="product-brand">Versace</p>
+        <p class="product-name">Eros Eau de Parfum</p>
+        <button class="botonChido">Cotizar</button>
+      </div>
+
+      <div class="product-card" data-marca="Versace">
+        <img
+          src="https://fimgs.net/mdimg/perfume-thumbs/375x500.16657.2x.avif"
+          alt="Eros Eau de Parfum"
+        />
+        <p class="product-brand">Versace</p>
+        <p class="product-name">Eros Eau de Parfum</p>
+        <button class="botonChido">Cotizar</button>
+      </div>
+
+      <div class="product-card" data-marca="Versace">
+        <img
+          src="https://fimgs.net/mdimg/perfume-thumbs/375x500.16657.2x.avif"
+          alt="Eros Eau de Parfum"
+        />
+        <p class="product-brand">Versace</p>
+        <p class="product-name">Eros Eau de Parfum</p>
+        <button class="botonChido">Cotizar</button>
+      </div>
+    </section>
+
+    <div id="paginacion"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
