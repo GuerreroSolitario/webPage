@@ -231,9 +231,11 @@ document.querySelectorAll(".product-card button").forEach((boton) => {
     if (navLinks.classList.contains("show")) return;
 
     const card = boton.closest(".product-card");
-    const nombreProducto = card.querySelector(".product-name").textContent;
+const nombreProducto = card.querySelector(".product-name").textContent;
+const marcaProducto = card.querySelector(".product-brand").textContent;
 
-    const mensaje = `Hola, estoy interesado en el perfume: ${nombreProducto}`;
+const mensaje = `Hola, estoy interesado en el perfume: ${nombreProducto} | ${marcaProducto}`;
+
     const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
       mensaje
     )}`;
