@@ -579,9 +579,12 @@ function obtenerProductosFiltrados() {
       marcasActivas.length === 0 ||
       marcasActivas.includes(normalizar(p.Marca));
 
-    const generoOk =
-      generosActivos.length === 0 ||
-      generosActivos.includes(normalizar(p["Género"]));
+ const generoOk =
+  generosActivos.length === 0 ||
+  generosActivos.includes(normalizar(p["Género"])) ||
+  (normalizar(p["Género"]) === "unisex" &&
+    (generosActivos.includes("caballero") ||
+     generosActivos.includes("dama")));
 
     const combinado = normalizar(`${p.Marca} ${p.Nombre}`);
 
