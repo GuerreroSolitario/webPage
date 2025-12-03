@@ -566,7 +566,6 @@ function obtenerProductosFiltrados() {
   const texto = textoBusqueda.trim();
   const palabras = texto.split(/\s+/).filter(Boolean);
 
-  // 🔥 SI NO HAY TEXTO Y NO HAY FILTROS → MOSTRAR MAIN DEFAULT
   if (
     palabras.length === 0 &&
     marcasActivas.length === 0 &&
@@ -575,8 +574,7 @@ function obtenerProductosFiltrados() {
     return "DEFAULT";
   }
 
-  // 🔎 Aplicar filtros normales
-  return perfumes.filter(p => {
+  const filtrados = perfumes.filter(p => {
     const marcaOk =
       marcasActivas.length === 0 ||
       marcasActivas.includes(normalizar(p.Marca));
@@ -587,14 +585,45 @@ function obtenerProductosFiltrados() {
 
     const combinado = normalizar(`${p.Marca} ${p.Nombre}`);
 
-    // TODAS las palabras del buscador deben estar presentes
     const textoOk =
       palabras.length === 0 ||
       palabras.every(palabra => combinado.includes(palabra));
 
     return marcaOk && generoOk && textoOk;
   });
+
+  return filtrados.sort((a, b) => {
+    const nombreA = normalizar(a.Nombre);
+    const nombreB = normalizar(b.Nombre);
+    const marcaA = normalizar(a.Marca);
+    const marcaB = normalizar(b.Marca);
+
+    const scoreA = palabras.reduce((score, palabra) => {
+      if (nombreA.split(/\s+/).includes(palabra)) score += 5; // palabra exacta en nombre
+      else if (marcaA.split(/\s+/).includes(palabra)) score += 4; // palabra exacta en marca
+      else if (nombreA.includes(palabra)) score += 2; // parcial en nombre
+      else if (marcaA.includes(palabra)) score += 1; // parcial en marca
+      return score;
+    }, 0);
+
+    const scoreB = palabras.reduce((score, palabra) => {
+      if (nombreB.split(/\s+/).includes(palabra)) score += 5;
+      else if (marcaB.split(/\s+/).includes(palabra)) score += 4;
+      else if (nombreB.includes(palabra)) score += 2;
+      else if (marcaB.includes(palabra)) score += 1;
+      return score;
+    }, 0);
+
+    if (scoreB !== scoreA) {
+      return scoreB - scoreA; // mayor score primero
+    }
+
+    // desempate alfabético
+    return nombreA.localeCompare(nombreB);
+  });
 }
+
+
 
 
 const porPagina = 30;
