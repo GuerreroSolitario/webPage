@@ -272,21 +272,34 @@ modal.addEventListener("click", (event) => {
 
 productList.addEventListener("click", (e) => {
   const boton = e.target.closest(".product-card button");
-  if (!boton) return;
+  if (boton) {
+    if (navLinks.classList.contains("show")) return;
 
-  // Bloquear si menú abierto
-  if (navLinks.classList.contains("show")) return;
+    const card = boton.closest(".product-card");
 
-  const card = boton.closest(".product-card");
-  const nombreProducto = card.querySelector(".product-name").textContent;
+    const nombreProducto = card.querySelector(".product-name").textContent;
+    const marcaProducto = card.querySelector(".product-brand").textContent;
 
-  const mensaje = `Hola, estoy interesado en el perfume: ${nombreProducto}`;
-  const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
-    mensaje
-  )}`;
+    const mensaje = `Hola, estoy interesado en el perfume: ${nombreProducto} | ${marcaProducto}`;
 
-  window.open(url, "_blank");
+    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
+      mensaje
+    )}`;
+
+    window.open(url, "_blank");
+    return;
+  }
+
+  // Imagen modal (lo de abajo queda igual)
+  const img = e.target.closest(".product-card img");
+  if (img) {
+    if (navLinks.classList.contains("show")) return;
+    modal.style.display = "block";
+    modalImg.src = img.src;
+    captionText.textContent = img.alt;
+  }
 });
+
 
 // Delegación para imágenes
 productList.addEventListener("click", (e) => {
