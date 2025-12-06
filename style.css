@@ -577,9 +577,8 @@ body.no-scroll {
 }
 
 .mobile-logo-menu {
-  display: block;
   margin: 0 auto;
-  max-width: 120px;
+  max-width: 25px;
   /* ajusta según tu diseño */
 }
 
@@ -683,7 +682,7 @@ body.no-scroll {
 
 @media (max-width: 768px) {
   .marca-scroll {
-    max-height: 220px;
+    max-height: 185px;
     overflow-y: scroll;
     padding-right: 0.5rem;
     border-radius: 4px;
