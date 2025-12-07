@@ -206,20 +206,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  borrarFiltros.addEventListener("click", function () {
-    // Desmarcar todas las marcas
-    marcaCheckboxes.forEach((cb) => (cb.checked = false));
+borrarFiltros.addEventListener("click", function () {
+  // Desmarcar todas las marcas
+  marcaCheckboxes.forEach((cb) => (cb.checked = false));
 
-    // Desmarcar todos los géneros
-    generoCheckboxes.forEach((cb) => (cb.checked = false));
+  // Desmarcar todos los géneros
+  generoCheckboxes.forEach((cb) => (cb.checked = false));
 
-    // Actualizar chips y botones
-    toggleBorrarFiltros();
-    actualizarMarcasSeleccionadas();
+  // Actualizar chips y botones
+  toggleBorrarFiltros();
+  actualizarMarcasSeleccionadas();
 
-    // Restaurar tarjetas iniciales
-    productList.innerHTML = initialHTML;
-  });
+  // Restaurar tarjetas iniciales
+  productList.innerHTML = initialHTML;
+
+  // 🔥 limpiar paginación
+  const paginacion = document.getElementById("paginacion");
+  if (paginacion) paginacion.innerHTML = "";
+});
+
 
   actualizarMarcasSeleccionadas();
   toggleBorrarFiltros();
