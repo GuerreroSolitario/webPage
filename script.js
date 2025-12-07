@@ -568,8 +568,13 @@ input.addEventListener("input", () => {
   if (bloqueMarcas) bloqueMarcas.style.display = "none";
   if (marcasSeleccionadas) marcasSeleccionadas.innerHTML = "";
 
+  // 👇 Ocultar el botón de borrar filtros al empezar a escribir
+  const borrarFiltros = document.getElementById("borrar-filtros");
+  if (borrarFiltros) borrarFiltros.style.display = "none";
+
   actualizarVista();
 });
+
 
   }
 });
