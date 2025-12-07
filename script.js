@@ -719,16 +719,6 @@ btn.onclick = () => {
   });
 };
 
-const buscador = document.querySelector(".search-box");
-const borrarFiltros = document.getElementById("borrar-filtros");
-
-buscador.addEventListener("input", () => {
-  // Si hay texto en el buscador, ocultar el span de borrar filtros
-  if (buscador.value.trim() !== "") {
-    if (borrarFiltros) borrarFiltros.style.display = "none";
-  }
-});
-
     paginacion.appendChild(btn);
   }
 
