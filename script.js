@@ -39,7 +39,11 @@ document.addEventListener("click", (event) => {
 });
 
 // Ocultar header al hacer scroll hacia abajo
+// Ocultar header al hacer scroll hacia abajo
 window.addEventListener("scroll", () => {
+  // 👉 si el menú hamburguesa está abierto, no ocultar header
+  if (navLinks.classList.contains("show")) return;
+
   const currentScrollY = window.scrollY;
 
   if (currentScrollY > lastScrollY && currentScrollY > 60) {
@@ -750,8 +754,11 @@ btn.onclick = () => {
   crearBoton(totalPaginas);
 }
 
-function actualizarVista() {
+function actualizarVista({ scroll = true } = {}) {
   paginaActual = 1;
   renderizarPagina(paginaActual);
   renderizarBotonesPaginacion();
+  if (scroll) {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 }
