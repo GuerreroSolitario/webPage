@@ -383,7 +383,7 @@ input[type="checkbox"] {
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   max-width: 1560px;
-  margin: 20px auto 0;
+  margin: 80px auto 0;
   padding: 0 1rem;
 }
 
